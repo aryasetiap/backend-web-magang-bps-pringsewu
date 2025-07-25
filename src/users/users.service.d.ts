@@ -1,0 +1,170 @@
+import { PrismaService } from '../prisma/prisma.service';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
+import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
+import { UpdateProfileDto } from './dto/update-profile.dto';
+export declare class UsersService {
+    private prisma;
+    constructor(prisma: PrismaService);
+    create(createUserDto: CreateUserDto): Promise<{
+        id: number;
+        name: string;
+        email: string;
+        profilePhoto: string | null;
+        namaLengkap: string | null;
+        nimNisn: string | null;
+        asalInstitusi: string | null;
+        jurusanProdi: string | null;
+        nomorTelepon: string | null;
+        alamat: string | null;
+        roleId: number;
+        createdAt: Date;
+        updatedAt: Date;
+        deletedAt: Date | null;
+        educationStatus: string | null;
+        activityType: string | null;
+        activityStart: Date | null;
+        activityEnd: Date | null;
+        isGraduated: boolean;
+        isEmailVerified: boolean;
+        emailOtp: string | null;
+        emailOtpExpires: Date | null;
+        lastOtpSentAt: Date | null;
+        resetPasswordOtp: string | null;
+        resetPasswordOtpExpires: Date | null;
+    }>;
+    getProfile(id: number): Promise<{
+        role: {
+            name: string;
+        };
+        id: number;
+        name: string;
+        email: string;
+        profilePhoto: string | null;
+        namaLengkap: string | null;
+        nimNisn: string | null;
+        asalInstitusi: string | null;
+        jurusanProdi: string | null;
+        nomorTelepon: string | null;
+        alamat: string | null;
+        createdAt: Date;
+        educationStatus: string | null;
+        activityType: string | null;
+        activityStart: Date | null;
+        activityEnd: Date | null;
+        isGraduated: boolean;
+    }>;
+    updateProfile(id: number, updateProfileDto: UpdateProfileDto, profilePhoto?: Express.Multer.File): Promise<{
+        role: {
+            name: string;
+        };
+        id: number;
+        name: string;
+        email: string;
+        profilePhoto: string | null;
+        namaLengkap: string | null;
+        nimNisn: string | null;
+        asalInstitusi: string | null;
+        jurusanProdi: string | null;
+        nomorTelepon: string | null;
+        alamat: string | null;
+        educationStatus: string | null;
+        activityType: string | null;
+        activityStart: Date | null;
+        activityEnd: Date | null;
+    }>;
+    findAll(paginationQuery: PaginationQueryDto): Promise<{
+        data: {
+            role: {
+                name: string;
+            };
+            id: number;
+            name: string;
+            email: string;
+            profilePhoto: string | null;
+            namaLengkap: string | null;
+            nimNisn: string | null;
+            asalInstitusi: string | null;
+            jurusanProdi: string | null;
+            nomorTelepon: string | null;
+            alamat: string | null;
+            educationStatus: string | null;
+            activityType: string | null;
+            activityStart: Date | null;
+            activityEnd: Date | null;
+        }[];
+        meta: {
+            totalItems: number;
+            itemCount: number;
+            itemsPerPage: number;
+            currentPage: number;
+            totalPages: number;
+        };
+    }>;
+    findOne(id: number): Promise<{
+        role: {
+            name: string;
+        };
+        id: number;
+        name: string;
+        email: string;
+        profilePhoto: string | null;
+        namaLengkap: string | null;
+        nimNisn: string | null;
+        asalInstitusi: string | null;
+        jurusanProdi: string | null;
+        nomorTelepon: string | null;
+        alamat: string | null;
+        educationStatus: string | null;
+        activityType: string | null;
+        activityStart: Date | null;
+        activityEnd: Date | null;
+    }>;
+    update(id: number, updateUserDto: UpdateUserDto): Promise<{
+        role: {
+            name: string;
+        };
+        id: number;
+        name: string;
+        email: string;
+        profilePhoto: string | null;
+        namaLengkap: string | null;
+        nimNisn: string | null;
+        asalInstitusi: string | null;
+        jurusanProdi: string | null;
+        nomorTelepon: string | null;
+        alamat: string | null;
+        educationStatus: string | null;
+        activityType: string | null;
+        activityStart: Date | null;
+        activityEnd: Date | null;
+    }>;
+    remove(id: number): Promise<{
+        id: number;
+        name: string;
+        email: string;
+        password: string;
+        profilePhoto: string | null;
+        namaLengkap: string | null;
+        nimNisn: string | null;
+        asalInstitusi: string | null;
+        jurusanProdi: string | null;
+        nomorTelepon: string | null;
+        alamat: string | null;
+        roleId: number;
+        createdAt: Date;
+        updatedAt: Date;
+        deletedAt: Date | null;
+        educationStatus: string | null;
+        activityType: string | null;
+        activityStart: Date | null;
+        activityEnd: Date | null;
+        isGraduated: boolean;
+        isEmailVerified: boolean;
+        emailOtp: string | null;
+        emailOtpExpires: Date | null;
+        lastOtpSentAt: Date | null;
+        resetPasswordOtp: string | null;
+        resetPasswordOtpExpires: Date | null;
+    }>;
+}
