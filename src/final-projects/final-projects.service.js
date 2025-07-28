@@ -92,9 +92,6 @@ let FinalProjectsService = class FinalProjectsService {
     }
     async update(id, userId, updateFinalProjectDto, file) {
         const finalProject = await this.findOne(id, userId);
-        if (['accepted'].includes(finalProject.status)) {
-            throw new common_1.ForbiddenException('Final project yang sudah diterima tidak dapat diubah');
-        }
         const updateData = {
             ...updateFinalProjectDto,
         };
